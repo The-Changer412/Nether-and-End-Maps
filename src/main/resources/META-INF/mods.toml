@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[35,)"
+license="GNU GPLv3"
+issueTrackerURL="https://github.com/bossmania/Nether-and-End-Maps/issues"
+
+
+[[mods]]
+modId="nemaps"
+version="${file.jarVersion}"
+displayName="Nether and End Maps"
+displayURL="https://github.com/bossmania/Nether-and-End-Maps"
+logoFile="examplemod.png"
+credits="Thanks for TurtyWurty for his forge tutorial on Youtube."
+authors="Bossmania for making everything."
+description='''
+This mod add in maps for the structures Nether and End Dimensions. 
+The mod also add in two new types of villager cartographers for the Nether an End Dimensions with their job site blocks.
+'''
+
+
+[[dependencies.examplemod]]
+    modId="forge"
+    mandatory=true
+    versionRange="[35,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.4,1.17)"
+    ordering="NONE"
+    side="BOTH"
