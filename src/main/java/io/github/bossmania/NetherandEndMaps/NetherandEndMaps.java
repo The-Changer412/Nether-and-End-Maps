@@ -17,6 +17,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import io.github.bossmania.NetherandEndMaps.core.init.BlockInit;
 import io.github.bossmania.NetherandEndMaps.core.init.ItemInit;
 
 import java.util.stream.Collectors;
@@ -33,8 +34,9 @@ public class NetherandEndMaps {
     	IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::setup);
         
-        //register the item
+        //register the inits
         ItemInit.ITEMS.register(bus);
+        BlockInit.BLOCKS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

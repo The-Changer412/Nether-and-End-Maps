@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"particle": "minecraft:block/cartography_table_side3",
+	    "north": "nemaps:blocks/end_cartography_table",
+	    "south": "nemaps:blocks/end_cartography_table",
+	    "east": "nemaps:blocks/end_cartography_table",
+	    "west": "nemaps:blocks/end_cartography_table",
+	    "up": "nemaps:blocks/end_cartography_table",
+	    "down": "nemaps:blocks/end_cartography_table"
+	}
+}

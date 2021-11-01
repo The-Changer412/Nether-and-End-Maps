@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": { 
-		"layer0": "nemaps:items/nether_map"
+		"layer0": "nemaps:items/bastion_remnant_map"
 	}
 }

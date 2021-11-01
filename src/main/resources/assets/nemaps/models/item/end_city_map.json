@@ -1,0 +1,6 @@
+{
+	"parent": "item/generated",
+	"textures": { 
+		"layer0": "nemaps:items/end_city_map"
+	}
+}
