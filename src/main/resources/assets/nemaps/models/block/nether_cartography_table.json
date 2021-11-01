@@ -2,11 +2,11 @@
 	"parent": "block/cube_all",
 	"textures": {
 		"particle": "minecraft:block/cartography_table_side3",
-	    "north": "nemaps:blocks/nether_cartography_table",
-	    "south": "nemaps:blocks/nether_cartography_table",
-	    "east": "nemaps:blocks/nether_cartography_table",
-	    "west": "nemaps:blocks/nether_cartography_table",
-	    "up": "nemaps:blocks/nether_cartography_table",
-	    "down": "nemaps:blocks/nether_cartography_table"
+	    "north": "nemaps:blocks/nether_cartography_table/cartography_table_side3",
+	    "south": "nemaps:blocks/nether_cartography_table/cartography_table_side1",
+	    "east": "nemaps:blocks/nether_cartography_table/cartography_table_side3",
+	    "west": "nemaps:blocks/nether_cartography_table/cartography_table_side2",
+	    "up": "nemaps:blocks/nether_cartography_table/cartography_table_top",
+	    "down": "nemaps:blocks/nether_cartography_table/dark_oak_planks"
 	}
 }
