@@ -3,5 +3,7 @@
 	"item.nemaps.bastion_remnant_map": "Bastion Remnant Map",
 	"item.nemaps.end_city_map": "End City Map",
 	"block.nemaps.nether_cartography_table": "Nether Cartography Table",
+	"block.nemaps.end_cartography_table": "End Cartography Table",
+	"tile.nemaps.nether_cartography_table": "Nether Cartography Table",
 	"tile.nemaps.end_cartography_table": "End Cartography Table"
 }
