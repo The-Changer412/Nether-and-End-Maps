@@ -1,10 +1,10 @@
 package io.github.bossmania.NetherandEndMaps.core.init;
 
 import io.github.bossmania.NetherandEndMaps.NetherandEndMaps;
+import io.github.bossmania.NetherandEndMaps.common.items.ExplorerMap;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item.Properties;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,8 +15,8 @@ public class ItemInit {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NetherandEndMaps.MOD_ID);
 	
 	//register the maps and add it into the misc group
-	public static final RegistryObject<Item> NETHER_FORTRESS_MAP = ITEMS.register("nether_fortress_map", 
-			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+	public static final RegistryObject<ExplorerMap> NETHER_FORTRESS_MAP = ITEMS.register("nether_fortress_map", 
+			() -> new ExplorerMap(new Item.Properties().group(ItemGroup.MISC)));
 	
 	public static final RegistryObject<Item> BASTION_REMNANT_MAP = ITEMS.register("bastion_remnant_map", 
 			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));

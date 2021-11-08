@@ -1,18 +1,21 @@
 {
-	"type": "minecraft:block",
+	"type": "minecraft:chest",
 	"pools": [
 		{
 			"rolls": 1,
-			"bonus_rolls": 0,
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "nemaps:nether_cartography_table"
-				}
-			],
-			"conditions": [
-				{
-					"condition": "minecraft:survives_explosion"
+					"name": "minecraft:map",
+					"functions": [
+						{
+							"function": "minecraft:exploration_map",
+							"destination": "village",
+							"decoration": "target_x",
+							"zoom": 1,
+							"skip_existing_chunks": true
+						}
+					]
 				}
 			]
 		}

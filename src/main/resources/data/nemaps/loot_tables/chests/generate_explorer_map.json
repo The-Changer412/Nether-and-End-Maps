@@ -13,7 +13,7 @@
 							"destination": "village",
 							"decoration": "target_x",
 							"zoom": 1,
-							"skip_existing_chunks": true
+							"skip_existing_chunks": false
 						}
 					]
 				}
