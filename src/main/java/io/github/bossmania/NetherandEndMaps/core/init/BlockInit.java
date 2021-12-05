@@ -1,10 +1,9 @@
 package io.github.bossmania.NetherandEndMaps.core.init;
 
 import io.github.bossmania.NetherandEndMaps.NetherandEndMaps;
-import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.AbstractBlock.Properties;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.material.Material;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -15,8 +14,8 @@ public class BlockInit {
 	
 	//create the new cartographies table
 	public static final RegistryObject<Block> NETHER_CARTOGRPAHY_TABLE = BLOCKS.register("nether_cartography_table", 
-			() -> new Block(AbstractBlock.Properties.create(Material.WOOD).from(Blocks.CARTOGRAPHY_TABLE)));
+			() -> new Block(Properties.from(Blocks.CARTOGRAPHY_TABLE)));
 	
 	public static final RegistryObject<Block> END_CARTOGRPAHY_TABLE = BLOCKS.register("end_cartography_table", 
-			() -> new Block(AbstractBlock.Properties.create(Material.WOOD).from(Blocks.CARTOGRAPHY_TABLE)));
+			() -> new Block(Properties.from(Blocks.CARTOGRAPHY_TABLE)));
 }
