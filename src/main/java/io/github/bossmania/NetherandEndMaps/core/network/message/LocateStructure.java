@@ -25,6 +25,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;
+import net.minecraft.world.gen.feature.structure.VillageConfig;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
@@ -88,26 +89,34 @@ public class LocateStructure {
 			
 			//check what type of structure is being called
 			Structure<NoFeatureConfig> structure = null;
+			Structure<VillageConfig> structureVillageConfig = null;
 			switch (message.structureType) {
 				case "fortress":
 					structure = Structure.FORTRESS;
 				break;
 				case "bastion_remnant":
-				    structure = Structure.BASTION_REMNANT
+					structureVillageConfig = Structure.BASTION_REMNANT;
 				break;
 				case "endcity":
-				    structure = Structure.ENDCITY
+				    structure = Structure.END_CITY;
 				break;
 			}
 			
-			//get the location of the structure and send it back to the client
-			BlockPos structureLocation = SEWorld.func_241117_a_(structure, player.getPosition(),100, false);
-			SimpleChannelNetwork.CHANNEL.sendTo(new CreateCompassLocator(structureLocation), 
+			//get the location of the structure based on the type of map
+			BlockPos structureLocation = null;
+			if (structure != null) {
+				structureLocation = SEWorld.func_241117_a_(structure, player.getPosition(), 100, false);
+			} else if (structureVillageConfig != null) {
+				structureLocation = SEWorld.func_241117_a_(structureVillageConfig, player.getPosition(), 100, false);
+			}
+			
+			//send the structure location to the client
+			SimpleChannelNetwork.CHANNEL.sendTo(new CreateCompassLocator(structureLocation, message.structureType), 
 					player.connection.getNetworkManager(), 
 					NetworkDirection.PLAY_TO_CLIENT);
-	
-			
 		});
+		
+		//tell the server that the packet was handle properly
 		context.setPacketHandled(true);
 	}
 	

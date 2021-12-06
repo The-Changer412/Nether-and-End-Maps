@@ -54,23 +54,26 @@ import net.minecraft.command.Commands;
 
 public class CreateCompassLocator {
 	public BlockPos structureLocation;
+	public String structureType;
 	
 	public CreateCompassLocator() {
 		
 	}
 	//create the constructor and store the structureLocation
-	public CreateCompassLocator(BlockPos structureLocation) {
+	public CreateCompassLocator(BlockPos structureLocation, String structureType) {
 		this.structureLocation = structureLocation;
+		this.structureType = structureType;
 	}
 	
 	//encode the message
 	public static void encode(CreateCompassLocator message, PacketBuffer buffer) {
 		buffer.writeBlockPos(message.structureLocation);
+		buffer.writeString(message.structureType);
 	}
 	
 	//decode the message
 	public static CreateCompassLocator decode(PacketBuffer buffer) {
-		return new CreateCompassLocator(buffer.readBlockPos());
+		return new CreateCompassLocator(buffer.readBlockPos(), buffer.readString());
 	}
 	
 	//execute function when message is sent to the client
@@ -79,7 +82,7 @@ public class CreateCompassLocator {
 		context.enqueueWork(() -> {
 			//make sure that the code is only run on the client side and send the structure to the client access to make the compass
 			DistExecutor.unsafeRunWhenOn(Dist.CLIENT, 
-					() -> () -> ClientAccess.createCompass(message.structureLocation));
+					() -> () -> ClientAccess.createCompass(message.structureLocation, message.structureType));
 		});
 		context.setPacketHandled(true);
 	}

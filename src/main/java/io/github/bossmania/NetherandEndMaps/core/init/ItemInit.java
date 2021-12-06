@@ -17,13 +17,19 @@ public class ItemInit {
 	
 	//register the maps and add it into the misc group
 	public static final RegistryObject<ExplorerMap> NETHER_FORTRESS_MAP = ITEMS.register("nether_fortress_map", 
-			() -> new ExplorerMap(new Item.Properties().MapType("fortress").group(ItemGroup.MISC)));
+			() -> new ExplorerMap(new Item.Properties().group(ItemGroup.MISC), "fortress"));
 	
-	public static final RegistryObject<Item> BASTION_REMNANT_MAP =  ITEMS.register("bastion_remnant_map", 
-			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+	public static final RegistryObject<ExplorerMap> BASTION_REMNANT_MAP = ITEMS.register("bastion_remnant_map", 
+			() -> new ExplorerMap(new Item.Properties().group(ItemGroup.MISC), "bastion_remnant"));
 	
-	public static final RegistryObject<Item> END_CITY_MAP = ITEMS.register("end_city_map", 
-			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+	public static final RegistryObject<ExplorerMap> END_CITY_MAP = ITEMS.register("end_city_map", 
+			() -> new ExplorerMap(new Item.Properties().group(ItemGroup.MISC), "endcity"));
+	
+//	public static final RegistryObject<Item> BASTION_REMNANT_MAP =  ITEMS.register("bastion_remnant_map", 
+//			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));
+//	
+//	public static final RegistryObject<Item> END_CITY_MAP = ITEMS.register("end_city_map", 
+//			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));
 	
 	
 	//register the blocks and add it to the block group

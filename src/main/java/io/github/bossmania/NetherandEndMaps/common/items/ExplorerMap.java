@@ -23,12 +23,9 @@ public class ExplorerMap extends Item{
 	String type = "";
 
 	//create the class
-	public ExplorerMap(Properties properties) {
+	public ExplorerMap(Properties properties, String type) {
 		super(properties);
-	}
-	
-	public void MapType(String type) {
-	    this.type = type;
+		this.type = type;
 	}
 	
 	//function event that gets execute when item is right clicked
@@ -44,13 +41,22 @@ public class ExplorerMap extends Item{
 			//get the dimension that the player is currently in
 			String[] dimensionList = playerIn.world.getDimensionKey().toString().split("/ ");
 			String dimension = dimensionList[1].substring(0, dimensionList[1].length() -1);
+			
 			//check if the player is in the right dimension
-			if (dimension.equals("minecraft:the_nether")==false) {
-				playerIn.sendMessage(new TranslationTextComponent("You can't use the map in this dimension. This map can only be used in the nether."), playerIn.getGameProfile().getId());
-			} else {
-				
-				//request a compass with the structure coords to the server
-				SimpleChannelNetwork.CHANNEL.sendToServer(new LocateStructure(type));
+			if (type.equals("fortress") || type.equals("bastion_remnant")) {
+				if (dimension.equals("minecraft:the_nether") == false) {
+					playerIn.sendMessage(new TranslationTextComponent("You can't use the map in this dimension. This map can only be used in the nether."), playerIn.getGameProfile().getId());
+				} else {
+					//request a compass with the structure coords to the server
+					SimpleChannelNetwork.CHANNEL.sendToServer(new LocateStructure(type));
+				}
+			} else if (type.equals("endcity")) {
+				if (dimension.equals("minecraft:the_end") == false) {
+					playerIn.sendMessage(new TranslationTextComponent("You can't use the map in this dimension. This map can only be used in the end."), playerIn.getGameProfile().getId());
+				} else {
+					//request a compass with the structure coords to the server
+					SimpleChannelNetwork.CHANNEL.sendToServer(new LocateStructure(type));
+				}
 			}
 			
 			//send a success to the item
