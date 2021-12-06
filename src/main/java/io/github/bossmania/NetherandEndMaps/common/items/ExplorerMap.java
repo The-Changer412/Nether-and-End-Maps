@@ -17,16 +17,19 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.structure.Structure;
 
 public class ExplorerMap extends Item{
+    
+    //check if right click has been pressed to prevent double right click
+	boolean rightClicked = false;
+	String type = "";
 
 	//create the class
 	public ExplorerMap(Properties properties) {
 		super(properties);
 	}
 	
-	//check if right click has been pressed to prevent double right click
-	boolean rightClicked = false;
-	Boolean error = false;
-	
+	public void MapType(String type) {
+	    this.type = type;
+	}
 	
 	//function event that gets execute when item is right clicked
 	@Override
@@ -47,7 +50,7 @@ public class ExplorerMap extends Item{
 			} else {
 				
 				//request a compass with the structure coords to the server
-				SimpleChannelNetwork.CHANNEL.sendToServer(new LocateStructure("fortress"));
+				SimpleChannelNetwork.CHANNEL.sendToServer(new LocateStructure(type));
 			}
 			
 			//send a success to the item

@@ -17,7 +17,7 @@ public class ItemInit {
 	
 	//register the maps and add it into the misc group
 	public static final RegistryObject<ExplorerMap> NETHER_FORTRESS_MAP = ITEMS.register("nether_fortress_map", 
-			() -> new ExplorerMap(new Item.Properties().group(ItemGroup.MISC)));
+			() -> new ExplorerMap(new Item.Properties().MapType("fortress").group(ItemGroup.MISC)));
 	
 	public static final RegistryObject<Item> BASTION_REMNANT_MAP =  ITEMS.register("bastion_remnant_map", 
 			() -> new Item(new Item.Properties().group(ItemGroup.MISC)));

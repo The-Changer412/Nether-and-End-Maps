@@ -92,6 +92,12 @@ public class LocateStructure {
 				case "fortress":
 					structure = Structure.FORTRESS;
 				break;
+				case "bastion_remnant":
+				    structure = Structure.BASTION_REMNANT
+				break;
+				case "endcity":
+				    structure = Structure.ENDCITY
+				break;
 			}
 			
 			//get the location of the structure and send it back to the client
