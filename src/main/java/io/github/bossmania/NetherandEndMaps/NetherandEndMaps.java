@@ -3,7 +3,6 @@ package io.github.bossmania.NetherandEndMaps;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import io.github.bossmania.NetherandEndMaps.core.init.BlockInit;
 import io.github.bossmania.NetherandEndMaps.core.init.ItemInit;
 import io.github.bossmania.NetherandEndMaps.core.network.SimpleChannelNetwork;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,7 +26,6 @@ public class NetherandEndMaps {
         
         //register the inits
         ItemInit.ITEMS.register(bus);
-        BlockInit.BLOCKS.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
