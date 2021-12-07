@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[35,)"
+loaderVersion="[32,)"
 license="GNU GPLv3"
 issueTrackerURL="https://github.com/bossmania/Nether-and-End-Maps/issues"
 
@@ -20,13 +20,13 @@ This mod add in maps for the structures in the Nether and End Dimensions.
 [[dependencies.examplemod]]
     modId="forge"
     mandatory=true
-    versionRange="[35,)"
+    versionRange="[32,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.4,1.17)"
+    versionRange="[1.16.1,1.17.1)"
     ordering="NONE"
     side="BOTH"
