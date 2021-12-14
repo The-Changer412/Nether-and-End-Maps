@@ -2,8 +2,6 @@ package io.github.bossmania.NetherandEndMaps.core.init;
 
 import io.github.bossmania.NetherandEndMaps.NetherandEndMaps;
 import io.github.bossmania.NetherandEndMaps.common.items.ExplorerMap;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.CompassItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.fml.RegistryObject;
