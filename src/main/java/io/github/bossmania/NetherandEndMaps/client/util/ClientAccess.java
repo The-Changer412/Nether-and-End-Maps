@@ -40,21 +40,24 @@ public class ClientAccess {
 			nbtTag.putString("LodestoneDimension", "minecraft:the_end");
 		}
 		nbtTag.put("LodestonePos", NBTUtil.writeBlockPos(structureLocation));
-		
 		structureCompass.setTag(nbtTag);
 		
+		//set the name of the compass of the structure and the coords of it
+		String x = String.valueOf(structureLocation.getX());	
+		String z = String.valueOf(structureLocation.getZ());
 		
 		if (structureType.equals("fortress") == true) {
-			structureCompass.setDisplayName(new TranslationTextComponent("Nether Fortress Compass"));
+			structureCompass.setDisplayName(new TranslationTextComponent("Nether Fortress Located at X: " + x + " / Z: " + z));
 		} else if (structureType.equals("bastion_remnant") == true) {
-			structureCompass.setDisplayName(new TranslationTextComponent("Bastion Remnant Compass"));
+			structureCompass.setDisplayName(new TranslationTextComponent("Bastion Remnant Located at X: " + x + " / Z: " + z));
 		} else if (structureType.equals("endcity") == true) {
-			structureCompass.setDisplayName(new TranslationTextComponent("End City Compass"));
+			structureCompass.setDisplayName(new TranslationTextComponent("End City Located at X: " + x + " / Z: " + z));
 		}
-		
-		
 		
 		//give the item to the player
 		PlayerIn.inventory.addItemStackToInventory(structureCompass);
+		if (PlayerIn.isCreative() == false) {
+			PlayerIn.inventory.getCurrentItem().shrink(1); 	
+         }
 	}
 }
